@@ -1,0 +1,11 @@
+def upper_bound(a, x):
+    lo, hi = 0, len(a)
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if a[mid] <= x:
+            lo = mid + 1
+        else:
+            hi = mid
+    return lo
+
+print(upper_bound([1,3,5,7], 5))  # → 3 (a[3]=7)
