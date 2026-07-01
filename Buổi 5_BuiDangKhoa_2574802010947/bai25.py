@@ -1,0 +1,12 @@
+def Bai_25():
+    print("\n--- Bài 25: Chứng minh tính đúng đắn của định lý tham lam Dijkstra ---")
+    print("Phát biểu bất biến tham lam:")
+    print("Tại thời điểm đỉnh u được lấy ra khỏi hàng đợi ưu tiên (chốt đỉnh), thì dist[u] đã đạt giá trị tối ưu ngắn nhất thực tế.")
+    print("\nChứng minh bằng phản chứng:")
+    print("Giả sử khi chốt u, tồn tại một đường đi thực tế khác ngắn hơn xuất phát từ nguồn s qua một đỉnh v nào đó rồi mới tới u.")
+    print("=> Độ dài đường đi thực tế = dist[v] + chi_phí(v -> u) < dist[u].")
+    print("Vì đồ thị chỉ chứa trọng số KHÔNG ÂM, nên ta chắc chắn có: dist[v] <= dist[v] + chi_phí(v -> u).")
+    print("Từ hai điều trên suy ra: dist[v] < dist[u].")
+    print("Nhưng theo quy tắc của hàng đợi ưu tiên (Min-Heap), phần tử có khoảng cách nhỏ hơn phải được lấy ra trước.")
+    print("Do đó đỉnh v đáng lẽ phải được lấy ra và chốt trước u. Điều này mâu thuẫn hoàn toàn với giả thiết u được chọn trước v.")
+    print("=> Bất biến tham lam luôn đúng. Định lý được chứng minh hoàn toàn.")
